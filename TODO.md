@@ -1,0 +1,29 @@
+- [+] ChaCha20 implementation
+- [+] Poly1305
+- [+] X25519
+- [+] Blake2b
+- [+] AEAD
+- [+] Crypto tests
+- [x] Reliable core – sequencing
+- [x] Reliable core – acks
+- [x] Channels
+  - Verified that sequencing, stalling, and ACK logic are all handled independently for each channel.
+  - Wrote `test_channels.c` to confirm channel separation.
+- [x] Fragmentation
+- [x] Aggregation
+  - Created `src/core/aggregation.c` and `src/core/aggregation.h` for packet aggregation and deaggregation.
+  - Wrote `tests/core/test_aggregation.c` to verify the functionality.
+  - Compiled and ran the test, which passed successfully.
+- [x] Bandwidth
+  - Created `src/core/bandwidth.c` and `src/core/bandwidth.h` for bandwidth calculation.
+  - Wrote `tests/core/test_bandwidth.c` to verify the functionality.
+  - Compiled and ran the test, which passed successfully.
+- [ ] Handshake (Noise_XX)
+  - Created `src/crypto/noise.c` and `src/crypto/noise.h` for the Noise_XX handshake.
+  - Wrote `tests/crypto/test_noise.c` to verify the initial handshake messages.
+  - The implementation is incomplete and only covers the first two messages of the handshake. More work is needed to complete the implementation, including encryption of payloads.
+- [ ] Session encryption
+- [ ] Public API
+- [ ] Demo
+- [ ] Documentation
+- [ ] Final polish
