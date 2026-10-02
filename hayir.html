@@ -1,30 +1,46 @@
 <!doctype html>
 <html lang="tr">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Bir daha düşün :)</title>
-<style>
-*{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;padding:24px;background:linear-gradient(160deg,#0d0a0d,#2a1020);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;color:white;text-align:center}.card{width:min(92vw,650px);padding:50px 30px;border:1px solid rgba(255,255,255,.12);border-radius:30px;background:rgba(255,255,255,.07);box-shadow:0 25px 80px rgba(0,0,0,.4);backdrop-filter:blur(16px)}h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(38px,7vw,66px);font-weight:500;margin:0 0 18px}p{opacity:.76;font-size:18px;line-height:1.6;margin:0 auto 30px;max-width:520px}.actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}a,button{padding:15px 25px;border-radius:999px;border:0;font-weight:700;font-size:16px;cursor:pointer;text-decoration:none}.back{background:#fff;color:#321124}.escape{background:rgba(255,255,255,.1);color:white;border:1px solid rgba(255,255,255,.16);position:relative}.tiny{font-size:12px;opacity:.36;margin-top:24px}@media(max-width:520px){.card{padding:42px 22px}.actions{flex-direction:column}a,button{width:100%}}
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no" />
+  <meta name="theme-color" content="#120914" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <title>Emin misin?</title>
+  <style>
+    *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+    html,body{margin:0;width:100%;min-height:100%;overflow:hidden;background:#0b070c}
+    body{min-height:100svh;color:#fff;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif;background:radial-gradient(circle at 50% 10%,#42152f 0,#21101c 37%,#0e090f 70%,#080608 100%)}
+    .screen{min-height:100svh;width:100%;display:flex;align-items:center;justify-content:center;padding:max(16px,env(safe-area-inset-top)) max(16px,env(safe-area-inset-right)) max(18px,env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left))}
+    .card{width:100%;max-width:430px;padding:clamp(28px,6svh,46px) 20px 22px;text-align:center;border:1px solid rgba(255,255,255,.11);border-radius:28px;background:rgba(255,255,255,.07);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);box-shadow:0 24px 70px rgba(0,0,0,.42)}
+    .face{font-size:46px;line-height:1;margin-bottom:15px}
+    h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(38px,11vw,56px);line-height:1;font-weight:500;letter-spacing:-.03em;margin:0 0 16px;text-wrap:balance}
+    p{font-size:clamp(15px,4vw,17px);line-height:1.52;color:rgba(255,255,255,.72);margin:0 auto 25px;max-width:340px;text-wrap:balance}
+    .actions{width:100%;display:grid;gap:10px}
+    .btn{width:100%;min-height:58px;border-radius:18px;border:0;font-size:16px;font-weight:750;text-decoration:none;display:flex;align-items:center;justify-content:center;cursor:pointer;touch-action:manipulation;transition:transform .14s ease,background .14s ease}
+    .btn:active{transform:scale(.975)}
+    .back{background:#fff;color:#351126;box-shadow:0 12px 34px rgba(255,255,255,.13)}
+    .no{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.14)}
+    .tiny{font-size:11px;opacity:.32;margin-top:16px}
+    @media(max-height:620px){.card{padding:20px 18px}.face{font-size:34px;margin-bottom:9px}h1{font-size:34px;margin-bottom:10px}p{font-size:14px;line-height:1.4;margin-bottom:16px}.btn{min-height:50px}.tiny{margin-top:10px}}
+  </style>
 </head>
 <body>
-<div class="card">
-  <div style="font-size:42px">🥺</div>
-  <h1>Emin misin?</h1>
-  <p>Bu seçenek biraz şüpheli geldi. İstersen ilk sayfaya dönüp soruyu bir kez daha düşünebilirsin.</p>
-  <div class="actions">
-    <a class="back" href="index.html">Tamam, bir daha düşüneyim ♡</a>
-    <button class="escape" id="escape">Yine de hayır</button>
-  </div>
-  <div class="tiny">“Yine de hayır” biraz utangaç olabilir.</div>
-</div>
-<script>
-const b=document.getElementById('escape');
-let n=0;
-const texts=['Bir daha düşün 😭','Gerçekten mi?','Son kararın mı?','Evet daha güzel duruyor ♡'];
-function move(){n++;b.textContent=texts[Math.min(n-1,texts.length-1)];const x=Math.random()*Math.max(10,window.innerWidth-b.offsetWidth-30);const y=Math.random()*Math.max(10,window.innerHeight-b.offsetHeight-30);b.style.position='fixed';b.style.left=x+'px';b.style.top=y+'px'}
-b.addEventListener('mouseenter',move);b.addEventListener('touchstart',e=>{e.preventDefault();move()},{passive:false});b.addEventListener('click',move);
-</script>
+  <main class="screen">
+    <section class="card">
+      <div class="face">🥺</div>
+      <h1>Emin misin?</h1>
+      <p>Bir daha düşünmek istersen geri dönebilirsin. Ama yine de kararın hayırsa, buna da saygı duyuyorum.</p>
+      <div class="actions">
+        <a class="btn back" href="index.html">Bir daha düşüneyim ♡</a>
+        <button class="btn no" id="no" type="button">Yine de hayır</button>
+      </div>
+      <div class="tiny">Son karar senin.</div>
+    </section>
+  </main>
+  <script>
+    document.getElementById('no').addEventListener('click',()=>{
+      location.href='https://www.youtube.com/watch?v=odoK04z8exU&list=RDodoK04z8exU&start_radio=1';
+    });
+  </script>
 </body>
 </html>
