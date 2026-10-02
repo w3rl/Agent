@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#140b16" />
+  <title>Benimle Evlenir misin?</title>
+  <style>
+    *{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}body{min-height:100vh;display:grid;place-items:center;overflow:hidden;color:#fff;background:radial-gradient(circle at 50% 15%,#4c1638 0,#25101f 35%,#100811 72%,#090609 100%)}
+    body:before{content:"";position:fixed;inset:-30%;background:radial-gradient(circle,rgba(255,127,172,.12),transparent 55%);animation:glow 7s ease-in-out infinite alternate;pointer-events:none}@keyframes glow{to{transform:translate3d(5%,4%,0) scale(1.12)}}
+    .heart{position:fixed;bottom:-40px;font-size:clamp(18px,2vw,30px);opacity:.2;animation:float var(--d) linear infinite;left:var(--x);filter:blur(.2px)}@keyframes float{to{transform:translateY(-120vh) rotate(25deg);opacity:0}}
+    main{width:min(92vw,720px);padding:56px 34px;text-align:center;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.07);box-shadow:0 30px 90px rgba(0,0,0,.45);backdrop-filter:blur(18px);border-radius:32px;position:relative;z-index:2}
+    .mini{font-size:13px;letter-spacing:.18em;text-transform:uppercase;opacity:.62;margin-bottom:14px}h1{font-family:Georgia,"Times New Roman",serif;font-weight:500;font-size:clamp(42px,8vw,78px);line-height:.98;margin:0 0 18px}p{font-size:clamp(16px,2.4vw,20px);line-height:1.65;color:rgba(255,255,255,.76);max-width:570px;margin:0 auto 34px}.buttons{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}.btn{border:0;border-radius:999px;padding:16px 28px;font-size:16px;font-weight:700;cursor:pointer;transition:.22s ease;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;min-width:150px}.yes{background:#fff;color:#351126;box-shadow:0 12px 35px rgba(255,255,255,.16)}.yes:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 16px 45px rgba(255,255,255,.25)}.no{background:rgba(255,255,255,.09);color:#fff;border:1px solid rgba(255,255,255,.16)}.no:hover{background:rgba(255,255,255,.14);transform:translateY(-2px)}.ring{font-size:38px;margin-bottom:18px;display:inline-block;animation:tilt 2.8s ease-in-out infinite}@keyframes tilt{0%,100%{transform:rotate(-8deg) scale(1)}50%{transform:rotate(8deg) scale(1.08)}}.note{margin-top:24px;font-size:12px;opacity:.38}
+    @media(max-width:520px){main{padding:44px 22px;border-radius:26px}.buttons{flex-direction:column}.btn{width:100%}}
+  </style>
+</head>
+<body>
+  <span class="heart" style="--x:8%;--d:12s">♥</span><span class="heart" style="--x:23%;--d:15s">♥</span><span class="heart" style="--x:47%;--d:10s">♥</span><span class="heart" style="--x:71%;--d:14s">♥</span><span class="heart" style="--x:89%;--d:11s">♥</span>
+  <main>
+    <div class="ring">💍</div>
+    <div class="mini">Sana tek bir soru</div>
+    <h1>Benimle evlenir misin?</h1>
+    <p>Hayatımın geri kalanında her güzel anı seninle paylaşmak, her zor günde yanında olmak ve her sabaha seninle uyanmak istiyorum.</p>
+    <div class="buttons">
+      <button class="btn yes" id="yes">Evet ♡</button>
+      <a class="btn no" href="hayir.html">Hayır</a>
+    </div>
+    <div class="note">Cevabını kalbinden ver.</div>
+  </main>
+  <script>
+    document.getElementById('yes').addEventListener('click', () => {
+      window.location.href = 'https://www.youtube.com/watch?v=j-T4hRJNFJI&list=RDj-T4hRJNFJI&start_radio=1';
+    });
+  </script>
+</body>
+</html>
