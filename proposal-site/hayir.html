@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Bir daha düşün :)</title>
+<style>
+*{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;padding:24px;background:linear-gradient(160deg,#0d0a0d,#2a1020);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;color:white;text-align:center}.card{width:min(92vw,650px);padding:50px 30px;border:1px solid rgba(255,255,255,.12);border-radius:30px;background:rgba(255,255,255,.07);box-shadow:0 25px 80px rgba(0,0,0,.4);backdrop-filter:blur(16px)}h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(38px,7vw,66px);font-weight:500;margin:0 0 18px}p{opacity:.76;font-size:18px;line-height:1.6;margin:0 auto 30px;max-width:520px}.actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}a,button{padding:15px 25px;border-radius:999px;border:0;font-weight:700;font-size:16px;cursor:pointer;text-decoration:none}.back{background:#fff;color:#321124}.escape{background:rgba(255,255,255,.1);color:white;border:1px solid rgba(255,255,255,.16);position:relative}.tiny{font-size:12px;opacity:.36;margin-top:24px}@media(max-width:520px){.card{padding:42px 22px}.actions{flex-direction:column}a,button{width:100%}}
+</style>
+</head>
+<body>
+<div class="card">
+  <div style="font-size:42px">🥺</div>
+  <h1>Emin misin?</h1>
+  <p>Bu seçenek biraz şüpheli geldi. İstersen ilk sayfaya dönüp soruyu bir kez daha düşünebilirsin.</p>
+  <div class="actions">
+    <a class="back" href="index.html">Tamam, bir daha düşüneyim ♡</a>
+    <button class="escape" id="escape">Yine de hayır</button>
+  </div>
+  <div class="tiny">“Yine de hayır” biraz utangaç olabilir.</div>
+</div>
+<script>
+const b=document.getElementById('escape');
+let n=0;
+const texts=['Bir daha düşün 😭','Gerçekten mi?','Son kararın mı?','Evet daha güzel duruyor ♡'];
+function move(){n++;b.textContent=texts[Math.min(n-1,texts.length-1)];const x=Math.random()*Math.max(10,window.innerWidth-b.offsetWidth-30);const y=Math.random()*Math.max(10,window.innerHeight-b.offsetHeight-30);b.style.position='fixed';b.style.left=x+'px';b.style.top=y+'px'}
+b.addEventListener('mouseenter',move);b.addEventListener('touchstart',e=>{e.preventDefault();move()},{passive:false});b.addEventListener('click',move);
+</script>
+</body>
+</html>
