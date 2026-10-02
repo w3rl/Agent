@@ -2,34 +2,34 @@
 <html lang="tr">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no" />
   <meta name="theme-color" content="#120914" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <title>Benimle Evlenir misin?</title>
   <style>
-    :root{--bg:#0b070c;--pink:#ff9abb;--white:#fff}
+    :root{--bg:#0b070c;--pink:#ff9abb}
     *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-    html,body{margin:0;width:100%;height:100%;overflow:hidden;background:var(--bg)}
+    html,body{margin:0;width:100%;min-height:100%;overflow:hidden;background:var(--bg)}
     body{min-height:100svh;color:#fff;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif;background:radial-gradient(circle at 50% 8%,#541b3d 0,#26101f 34%,#100912 67%,#080608 100%);position:relative}
-    body:before{content:"";position:fixed;inset:-20%;background:radial-gradient(circle,rgba(255,145,184,.13),transparent 58%);animation:glow 7s ease-in-out infinite alternate;pointer-events:none}
+    body:before{content:"";position:fixed;inset:-20%;background:radial-gradient(circle,rgba(255,145,184,.14),transparent 58%);animation:glow 7s ease-in-out infinite alternate;pointer-events:none}
     @keyframes glow{to{transform:translate3d(4%,3%,0) scale(1.08)}}
     .heart{position:fixed;bottom:-30px;left:var(--x);font-size:var(--s);opacity:.16;animation:float var(--d) linear infinite;pointer-events:none}
     @keyframes float{to{transform:translateY(-115svh) rotate(24deg);opacity:0}}
-    .screen{min-height:100svh;width:100%;display:flex;align-items:center;justify-content:center;padding:max(18px,env(safe-area-inset-top)) max(18px,env(safe-area-inset-right)) max(22px,env(safe-area-inset-bottom)) max(18px,env(safe-area-inset-left));position:relative;z-index:1}
-    .card{width:100%;max-width:430px;max-height:calc(100svh - 36px);padding:clamp(26px,6svh,48px) 22px 24px;text-align:center;border:1px solid rgba(255,255,255,.11);border-radius:30px;background:rgba(255,255,255,.07);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);box-shadow:0 24px 70px rgba(0,0,0,.42);display:flex;flex-direction:column;align-items:center;justify-content:center}
-    .ring{font-size:clamp(38px,10vw,48px);line-height:1;margin-bottom:14px;animation:tilt 2.6s ease-in-out infinite}
+    .screen{min-height:100svh;width:100%;display:flex;align-items:center;justify-content:center;padding:max(16px,env(safe-area-inset-top)) max(16px,env(safe-area-inset-right)) max(18px,env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left));position:relative;z-index:1}
+    .card{width:100%;max-width:430px;padding:clamp(24px,5.5svh,44px) 20px 22px;text-align:center;border:1px solid rgba(255,255,255,.11);border-radius:28px;background:rgba(255,255,255,.07);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);box-shadow:0 24px 70px rgba(0,0,0,.42);display:flex;flex-direction:column;align-items:center;justify-content:center}
+    .ring{font-size:clamp(38px,10vw,48px);line-height:1;margin-bottom:13px;animation:tilt 2.6s ease-in-out infinite}
     @keyframes tilt{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(8deg) scale(1.08)}}
-    .mini{font-size:11px;letter-spacing:.2em;text-transform:uppercase;opacity:.55;margin-bottom:13px}
-    h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(37px,11vw,56px);line-height:.98;font-weight:500;letter-spacing:-.03em;margin:0 0 17px;max-width:360px;text-wrap:balance}
-    p{font-size:clamp(15px,4.1vw,18px);line-height:1.55;color:rgba(255,255,255,.72);margin:0 auto 26px;max-width:350px;text-wrap:balance}
-    .buttons{width:100%;display:grid;gap:11px}
-    .btn{width:100%;min-height:56px;border:0;border-radius:18px;font-size:17px;font-weight:750;text-decoration:none;display:flex;align-items:center;justify-content:center;cursor:pointer;touch-action:manipulation;transition:transform .14s ease,background .14s ease}
+    .mini{font-size:11px;letter-spacing:.2em;text-transform:uppercase;opacity:.55;margin-bottom:12px}
+    h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(36px,10.8vw,55px);line-height:.98;font-weight:500;letter-spacing:-.03em;margin:0 0 16px;max-width:360px;text-wrap:balance}
+    p{font-size:clamp(15px,4vw,17px);line-height:1.52;color:rgba(255,255,255,.72);margin:0 auto 24px;max-width:340px;text-wrap:balance}
+    .buttons{width:100%;display:grid;gap:10px}
+    .btn{width:100%;min-height:58px;border:0;border-radius:18px;font-size:17px;font-weight:750;text-decoration:none;display:flex;align-items:center;justify-content:center;cursor:pointer;touch-action:manipulation;transition:transform .14s ease,background .14s ease}
     .btn:active{transform:scale(.975)}
     .yes{background:#fff;color:#351126;box-shadow:0 12px 34px rgba(255,255,255,.13)}
     .no{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.14)}
-    .note{font-size:11px;opacity:.32;margin-top:17px}
-    @media (max-height:690px){.card{padding:24px 20px 20px}.ring{font-size:34px;margin-bottom:10px}.mini{margin-bottom:9px}h1{font-size:36px;margin-bottom:12px}p{font-size:14px;line-height:1.42;margin-bottom:18px}.btn{min-height:50px}.note{margin-top:12px}}
-    @media (min-width:700px){.card{max-width:520px;padding:48px 36px 34px}.buttons{grid-template-columns:1fr 1fr}}
+    .note{font-size:11px;opacity:.32;margin-top:16px}
+    @media(max-height:680px){.card{padding:20px 18px}.ring{font-size:32px;margin-bottom:8px}.mini{margin-bottom:7px}h1{font-size:34px;margin-bottom:10px}p{font-size:14px;line-height:1.4;margin-bottom:15px}.btn{min-height:50px}.note{margin-top:10px}}
+    @media(min-width:700px){.card{max-width:520px;padding:48px 36px 34px}.buttons{grid-template-columns:1fr 1fr}}
   </style>
 </head>
 <body>
@@ -38,7 +38,6 @@
   <span class="heart" style="--x:52%;--d:11s;--s:24px">♥</span>
   <span class="heart" style="--x:76%;--d:15s;--s:17px">♥</span>
   <span class="heart" style="--x:91%;--d:13s;--s:21px">♥</span>
-
   <main class="screen">
     <section class="card">
       <div class="ring">💍</div>
@@ -52,7 +51,6 @@
       <div class="note">Cevabını kalbinden ver.</div>
     </section>
   </main>
-
   <script>
     document.getElementById('yes').addEventListener('click',()=>{
       location.href='https://www.youtube.com/watch?v=j-T4hRJNFJI&list=RDj-T4hRJNFJI&start_radio=1';
